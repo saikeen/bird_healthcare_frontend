@@ -1,24 +1,19 @@
-import { Box, Center, Flex, Square, Text } from '@chakra-ui/react';
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
 
 const App: React.FC = () => {
   return (
     <>
-      <Flex className="header" backgroundColor="lightblue">
-        <Box>
-          <Text>BirdHealthcare</Text>
-        </Box>
-      </Flex>
-      <Flex className="main" backgroundColor="white">
-        <Box>
-          <Text>BirdHealthcare</Text>
-        </Box>
-      </Flex>
-      <Flex className="footer" backgroundColor="lightblue">
-        <Box>
-          <Text>footer</Text>
-        </Box>
-      </Flex>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </>
   );
 };
