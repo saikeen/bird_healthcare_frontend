@@ -4,8 +4,8 @@ import {
   Button,
   Flex,
   Heading,
+  Link,
   Stack,
-  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
@@ -26,7 +26,9 @@ const Header: React.FC = () => {
     >
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-          BirdHealthcare
+          <Link href="/" _hover={{ textDecoration: 'none' }}>
+            BirdHealthcare
+          </Link>
         </Heading>
       </Flex>
 
@@ -42,9 +44,7 @@ const Header: React.FC = () => {
         flexGrow={1}
         mt={{ base: 4, md: 0 }}
       >
-        <Text>Docs</Text>
-        <Text>Examples</Text>
-        <Text>Blog</Text>
+        <Link href="/records">健康管理表</Link>
       </Stack>
 
       <Box
