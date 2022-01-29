@@ -1,7 +1,6 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
-  Button,
   Flex,
   Heading,
   Link,
@@ -25,7 +24,7 @@ const Header: React.FC = () => {
       color="white"
     >
       <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg" letterSpacing={'tighter'}>
+        <Heading as="h1" size="lg" letterSpacing="tighter">
           <Link href="/" _hover={{ textDecoration: 'none' }}>
             バドレコ
           </Link>

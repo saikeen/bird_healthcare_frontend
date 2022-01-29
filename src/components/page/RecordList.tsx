@@ -22,6 +22,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Modal from '../ui/Modal';
 import RecordEditForm from '../model/Record/RecordEditForm';
 import Form from '../ui/Form';
+
 registerLocale('ja', ja);
 
 type Option = {
@@ -83,7 +84,6 @@ const RecordList: React.FC = () => {
                 <DatePicker
                   locale="ja"
                   dateFormat="yyyy/MM/dd"
-                  selectsRange={true}
                   startDate={displayCondition.startDate}
                   endDate={displayCondition.endDate}
                   maxDate={today}
@@ -93,7 +93,8 @@ const RecordList: React.FC = () => {
                       endDate: dates[1],
                     });
                   }}
-                  isClearable={true}
+                  selectsRange
+                  isClearable
                   customInput={
                     <Input h="38px" backgroundColor="#FFF" minW={250} />
                   }
@@ -114,14 +115,14 @@ const RecordList: React.FC = () => {
                     <Th minW="80px">天気</Th>
                     <Th minW="80px">室温</Th>
                     <Th minW="80px">備考</Th>
-                    <Th minW="80px"></Th>
+                    <Th minW="80px" />
                   </Tr>
                 </Thead>
                 <Tbody>
                   {eachDayOfInterval({
                     start: displayCondition.startDate || today,
                     end: displayCondition.endDate || today,
-                  }).map((day, i) => (
+                  }).map((day) => (
                     <Tr>
                       <Td>{format(day, 'yyyy/MM/dd')}</Td>
                       <Td>0.0</Td>
@@ -133,8 +134,8 @@ const RecordList: React.FC = () => {
                       </Td>
                       <Td>
                         <Button
-                          size={'xs'}
-                          colorScheme={'teal'}
+                          size="xs"
+                          colorScheme="teal"
                           onClick={() => setOpenDialog(true)}
                         >
                           編集

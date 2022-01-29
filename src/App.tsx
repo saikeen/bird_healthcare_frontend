@@ -4,19 +4,17 @@ import Header from './components/ui/global/Header';
 import Footer from './components/ui/global/Footer';
 import RecordList from './components/page/RecordList';
 
-const App: React.FC = () => {
-  return (
-    <>
-      <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<RecordList />} />
-          <Route path="/records" element={<RecordList />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
-    </>
-  );
-};
+const App: React.FC = () => (
+  <>
+    <Header />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RecordList />} />
+        <Route path="/records" element={<RecordList />} />
+      </Routes>
+    </BrowserRouter>
+    <Footer />
+  </>
+);
 
 export default App;

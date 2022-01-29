@@ -49,6 +49,9 @@ module.exports = {
         allowAsStatement: true,
       },
     ],
+    'react/function-component-definition': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/prop-types': 'off',
   },
   settings: {
     'import/resolver': {

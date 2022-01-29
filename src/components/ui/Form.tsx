@@ -4,13 +4,11 @@ import React from 'react';
 const Form: React.FC<{
   title: string;
   component: React.ReactNode;
-}> = ({ title, component }) => {
-  return (
-    <FormControl>
-      <FormLabel>{title}</FormLabel>
-      {component}
-    </FormControl>
-  );
-};
+}> = ({ title, component }) => (
+  <FormControl>
+    <FormLabel>{title}</FormLabel>
+    {component}
+  </FormControl>
+);
 
 export default Form;
