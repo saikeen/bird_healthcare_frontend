@@ -27,7 +27,7 @@ const Header: React.FC = () => {
       <Flex align="center" mr={5}>
         <Heading as="h1" size="lg" letterSpacing={'tighter'}>
           <Link href="/" _hover={{ textDecoration: 'none' }}>
-            BirdHealthcare
+            バドレコ
           </Link>
         </Heading>
       </Flex>
@@ -44,20 +44,8 @@ const Header: React.FC = () => {
         flexGrow={1}
         mt={{ base: 4, md: 0 }}
       >
-        <Link href="/records">健康管理表</Link>
+        <Link href="/records">記録</Link>
       </Stack>
-
-      <Box
-        display={{ base: isOpen ? 'block' : 'none', md: 'block' }}
-        mt={{ base: 4, md: 0 }}
-      >
-        <Button
-          variant="outline"
-          _hover={{ bg: 'teal.700', borderColor: 'teal.700' }}
-        >
-          Create account
-        </Button>
-      </Box>
     </Flex>
   );
 };
