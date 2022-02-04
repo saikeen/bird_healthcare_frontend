@@ -16,12 +16,13 @@ import ja from 'date-fns/locale/ja';
 import { eachDayOfInterval, format, startOfMonth } from 'date-fns';
 import Select, { SingleValue } from 'react-select';
 import React, { useState } from 'react';
-import Panel from '../ui/Panel';
+import Panel from '../../ui/Panel';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import Modal from '../ui/Modal';
-import RecordEditForm from '../model/Record/RecordEditForm';
-import Form from '../ui/Form';
+import Modal from '../../ui/Modal';
+import RecordEditForm from '../../model/Record/RecordEditForm';
+import Form from '../../ui/Form';
+import RecordListTable from './RecordListTable';
 
 registerLocale('ja', ja);
 
@@ -103,61 +104,7 @@ const RecordList: React.FC = () => {
             />
           </Box>
         </Box>
-        <Box mt={4}>
-          {selectedBirdOption ? (
-            <Box overflowX="scroll">
-              <Table variant="simple">
-                <Thead>
-                  <Tr bg="gray.100">
-                    <Th minW="140px">日付</Th>
-                    <Th minW="90px">食事量</Th>
-                    <Th minW="80px">体重</Th>
-                    <Th minW="80px">天気</Th>
-                    <Th minW="80px">室温</Th>
-                    <Th minW="80px">備考</Th>
-                    <Th minW="80px" />
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {eachDayOfInterval({
-                    start: displayCondition.startDate || today,
-                    end: displayCondition.endDate || today,
-                  }).map((day) => (
-                    <Tr>
-                      <Td>{format(day, 'yyyy/MM/dd')}</Td>
-                      <Td>0.0</Td>
-                      <Td>0.0</Td>
-                      <Td>晴</Td>
-                      <Td>0.0</Td>
-                      <Td maxW="200px">
-                        texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
-                      </Td>
-                      <Td>
-                        <Button
-                          size="xs"
-                          colorScheme="teal"
-                          onClick={() => setOpenDialog(true)}
-                        >
-                          編集
-                        </Button>
-                      </Td>
-                    </Tr>
-                  ))}
-                </Tbody>
-              </Table>
-              <Modal
-                isOpen={isOpenDialog}
-                onClose={() => setOpenDialog(false)}
-                title="記録 編集"
-                component={<RecordEditForm />}
-              />
-            </Box>
-          ) : (
-            <Center>
-              記録を表示する愛鳥データが登録されていません。愛鳥登録画面から愛鳥データの登録を行ってください。
-            </Center>
-          )}
-        </Box>
+        <RecordListTable />
       </Panel>
     </Box>
   );
