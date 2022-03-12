@@ -42,8 +42,11 @@ const Header: React.FC = () => {
         alignItems="center"
         flexGrow={1}
         mt={{ base: 4, md: 0 }}
+        spacing={5}
       >
         <Link href="/records">記録</Link>
+
+        <Link href="/records/create">作成</Link>
       </Stack>
     </Flex>
   );

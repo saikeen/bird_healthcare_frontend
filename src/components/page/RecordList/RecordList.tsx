@@ -103,6 +103,9 @@ const RecordList: React.FC = () => {
               }
             />
           </Box>
+          <Box mt={{ md: 8}} ml={{md: 6}} >
+            <Button as="a" href="/records/create" colorScheme="teal" size="lg">作成</Button>
+          </Box>
         </Box>
         <RecordListTable />
       </Panel>
