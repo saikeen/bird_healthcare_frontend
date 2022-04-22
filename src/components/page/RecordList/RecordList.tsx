@@ -20,9 +20,9 @@ import Panel from '../../ui/Panel';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import Modal from '../../ui/Modal';
-import RecordEditForm from '../../model/Record/RecordEditForm';
+import RecordEditForm from '../../model/record/RecordEditForm';
 import Form from '../../ui/Form';
-import RecordListTable from './RecordListTable';
+import RecordListTable from '../../model/record/RecordList/RecordListTable';
 
 registerLocale('ja', ja);
 
@@ -41,7 +41,7 @@ type DisplayCondition = {
   endDate: Date | null;
 };
 
-const RecordList: React.FC = () => {
+export const RecordList = () => {
   const today = new Date();
   const [displayCondition, setDisplayCondition] = useState<DisplayCondition>({
     startDate: startOfMonth(today),
@@ -109,5 +109,3 @@ const RecordList: React.FC = () => {
     </Box>
   );
 };
-
-export default RecordList;

@@ -1,20 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from './components/ui/global/Header';
-import Footer from './components/ui/global/Footer';
-import RecordList from './components/page/RecordList/RecordList';
+import RecordListPage from './components/page/RecordList/RecordList.page';
+import TopPage from './components/page/Top/Top.page';
 
 const App: React.FC = () => (
-  <>
-    <Header />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RecordList />} />
-        <Route path="/records" element={<RecordList />} />
-      </Routes>
-    </BrowserRouter>
-    <Footer />
-  </>
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<TopPage />} />
+      <Route path="/records" element={<RecordListPage />} />
+    </Routes>
+  </BrowserRouter>
 );
 
 export default App;
