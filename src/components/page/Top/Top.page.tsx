@@ -1,5 +1,5 @@
-import Footer from '../../ui/global/Footer';
-import Header from '../../ui/global/Header';
+import Footer from '../../ui/Footer';
+import Header from '../../ui/Header';
 import { Top } from './Top';
 
 const TopPage = () => (

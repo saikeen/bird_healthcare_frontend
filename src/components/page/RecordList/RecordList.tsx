@@ -1,26 +1,12 @@
-import {
-  Box,
-  Table,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-  Heading,
-  Button,
-  Center,
-  Input,
-} from '@chakra-ui/react';
+import { Box, Heading, Input } from '@chakra-ui/react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import ja from 'date-fns/locale/ja';
-import { eachDayOfInterval, format, startOfMonth } from 'date-fns';
+import { startOfMonth } from 'date-fns';
 import Select, { SingleValue } from 'react-select';
 import React, { useState } from 'react';
 import Panel from '../../ui/Panel';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import Modal from '../../ui/Modal';
-import RecordEditForm from '../../model/record/RecordEditForm';
 import Form from '../../ui/Form';
 import RecordListTable from '../../model/record/RecordList/RecordListTable';
 
@@ -50,8 +36,6 @@ export const RecordList = () => {
   const [selectedBirdOption, setSelectedBirdOption] = useState<
     SingleValue<Option>
   >(options[0]);
-  const [isOpenDialog, setOpenDialog] = useState(false);
-
   const handleChange = (option: SingleValue<Option>) => {
     setSelectedBirdOption(option);
   };
