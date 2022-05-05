@@ -4,16 +4,17 @@ import ja from 'date-fns/locale/ja';
 import { startOfMonth } from 'date-fns';
 import Select, { SingleValue } from 'react-select';
 import { useState } from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { gql } from '@apollo/client';
 import Panel from '../../ui/Panel';
 import 'react-datepicker/dist/react-datepicker.css';
 import Form from '../../ui/Form';
 import RecordListTable from '../../model/Record/RecordList/RecordListTable';
+import { useRecordListQuery } from '../../../generated/graphql';
 
 registerLocale('ja', ja);
 
-const BIRD = gql`
-  query {
+gql`
+  query RecordListQuery {
     bird(id: 1) {
       name
     }
@@ -48,16 +49,14 @@ export const RecordList = () => {
     setSelectedBirdOption(option);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-  const { loading, error, data } = useQuery(BIRD);
+  const { loading, error, data } = useRecordListQuery();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
   return (
     <Box bg="gray.100" p={4}>
-      {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access */}
-      <Heading size="md">記録 一覧{data.bird.name}</Heading>
+      <Heading size="md">記録 一覧{data?.bird.name}</Heading>
       <Panel mt={4}>
         <Box display={{ md: 'flex' }}>
           <Box flexShrink={0}>

@@ -53,6 +53,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
+    'no-unused-expressions': ['error', { allowTaggedTemplates: true }],
   },
   settings: {
     'import/resolver': {

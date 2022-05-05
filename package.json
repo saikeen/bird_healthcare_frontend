@@ -8,6 +8,10 @@
     "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.4.9",
+    "@graphql-codegen/typescript-operations": "^2.3.6",
+    "@graphql-codegen/typescript-react-apollo": "^3.2.12",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
@@ -37,7 +41,8 @@
     "lint": "eslint --ext .ts,.tsx ./src",
     "fix": "yarn format && yarn lint:fix",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'"
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "eslintConfig": {
     "extends": [
@@ -67,6 +72,11 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "@graphql-codegen/typescript-operations": "2.3.6",
+    "@graphql-codegen/typescript-react-apollo": "3.2.12",
+    "@graphql-codegen/typescript": "2.4.9",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/cli": "2.6.2"
   }
 }

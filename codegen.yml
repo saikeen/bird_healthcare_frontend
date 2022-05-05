@@ -1,0 +1,16 @@
+overwrite: true
+schema: 'http://backend-api:3000/graphql'
+documents: 'src/components/page/**/*.{ts,tsx}'
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      typesPrefix: Gql
+      dedupeOperationSuffix: true
+
+hooks:
+  afterAllFileWrite:
+    - prettier --write
