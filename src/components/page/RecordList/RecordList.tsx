@@ -8,7 +8,7 @@ import Panel from '../../ui/Panel';
 
 import 'react-datepicker/dist/react-datepicker.css';
 import Form from '../../ui/Form';
-import RecordListTable from '../../model/record/RecordList/RecordListTable';
+import RecordListTable from '../../model/Record/RecordList/RecordListTable';
 
 registerLocale('ja', ja);
 

@@ -11,7 +11,6 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  useBreakpointValue,
   useDisclosure,
 } from '@chakra-ui/react';
 import {
@@ -55,7 +54,7 @@ export default function Header() {
           <Text
             as="a"
             href="/"
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
+            textAlign={{ base: 'center', md: 'left' }}
             fontFamily="heading"
             color="gray.800"
           >
