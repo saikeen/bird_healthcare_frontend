@@ -5,7 +5,7 @@ import { gql } from '@apollo/client';
 import Panel from '../../ui/Panel';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useRecordListQuery } from '../../../generated/graphql';
-import BirdListTable from '../../model/Record/BirdList/BirdListTable';
+import BirdListTable from '../../model/Bird/BirdList/BirdListTable';
 
 registerLocale('ja', ja);
 
