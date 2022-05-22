@@ -6,7 +6,7 @@ const BirdListTableHeaderRowCell: React.FC<{
   minW?: string;
 }> = ({ text, minW }) => (
   <GridItem>
-    <Box py={3} minW={minW} align="center" bg='gray.100'>
+    <Box px={6} py={3} minW={minW} >
       <Text>{text}</Text>
     </Box>
   </GridItem>
@@ -17,30 +17,35 @@ BirdListTableHeaderRowCell.defaultProps = {
 };
 
 const BirdListTableHeaderRow: React.FC = () => {
+  const bg = 'gray.100'
   const fontWeight = 'bold';
   return (
-    <Grid templateColumns="repeat(7, 1fr)" fontWeight={fontWeight}>
-      <BirdListTableHeaderRowCell text="日付" />
+    <Grid templateColumns="repeat(3, 1fr)" bg={bg}  fontWeight={fontWeight}>
+      <BirdListTableHeaderRowCell text="名前" />
+      <BirdListTableHeaderRowCell text="誕生日" />
+      <BirdListTableHeaderRowCell text="" />
     </Grid>
   );
 };
 
 const BirdListTableBodyRowCell: React.FC = () => (
   <GridItem>
-    <Box py={3} align="center" minW="100px">
+    <Box px={6} py={3} minW="100px">
       <Text>text</Text>
     </Box>
   </GridItem>
 );
 
 const BirdListTableBodyRow: React.FC = () => (
-  <Grid templateColumns="repeat(7, 1fr)">
+  <Grid templateColumns="repeat(3, 1fr)">
+    <BirdListTableBodyRowCell />
+    <BirdListTableBodyRowCell />
     <BirdListTableBodyRowCell />
   </Grid>
 );
 
 const BirdListTable: React.FC = () => (
-  <Box mt="20px" overflowX="hidden" overflowY="hidden" whiteSpace="nowrap">
+  <Box mt="20px" overflowX="scroll" overflowY="hidden" whiteSpace="nowrap">
     <BirdListTableHeaderRow />
     <BirdListTableBodyRow />
   </Box>

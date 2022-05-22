@@ -1,13 +1,8 @@
 import { Box, Heading } from '@chakra-ui/react';
-import { registerLocale } from 'react-datepicker';
-import ja from 'date-fns/locale/ja';
 import { gql } from '@apollo/client';
 import Panel from '../../ui/Panel';
-import 'react-datepicker/dist/react-datepicker.css';
 import { useRecordListQuery } from '../../../generated/graphql';
 import BirdListTable from '../../model/Bird/BirdList/BirdListTable';
-
-registerLocale('ja', ja);
 
 gql`
   query BirdListQuery {
