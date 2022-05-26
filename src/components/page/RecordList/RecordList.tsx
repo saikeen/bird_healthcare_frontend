@@ -1,4 +1,4 @@
-import { Box, Heading, Input } from '@chakra-ui/react';
+import { Box, Heading, Input, Button } from '@chakra-ui/react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import ja from 'date-fns/locale/ja';
 import { startOfMonth } from 'date-fns';
@@ -100,6 +100,9 @@ export const RecordList = () => {
                 />
               }
             />
+          </Box>
+          <Box mt={{ md: 8}} ml={{md: 6}} >
+            <Button as="a" href="/records/create" colorScheme="teal" size="lg">作成</Button>
           </Box>
         </Box>
         <RecordListTable />
