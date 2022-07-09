@@ -1,6 +1,6 @@
 overwrite: true
 schema: 'http://backend-api:3000/graphql'
-documents: 'src/components/page/**/*.{ts,tsx}'
+documents: 'src/pages/**/*.{ts,tsx}'
 generates:
   src/generated/graphql.tsx:
     plugins:

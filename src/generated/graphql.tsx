@@ -66,6 +66,13 @@ export type GqlRecord = {
   weather?: Maybe<Scalars['String']>;
 };
 
+export type GqlBirdListQueryVariables = Exact<{ [key: string]: never }>;
+
+export type GqlBirdListQuery = {
+  __typename?: 'Query';
+  bird: { __typename?: 'Bird'; name?: string | null };
+};
+
 export type GqlRecordListQueryVariables = Exact<{ [key: string]: never }>;
 
 export type GqlRecordListQuery = {
@@ -73,6 +80,61 @@ export type GqlRecordListQuery = {
   bird: { __typename?: 'Bird'; name?: string | null };
 };
 
+export const BirdListQueryDocument = gql`
+  query BirdListQuery {
+    bird(id: 1) {
+      name
+    }
+  }
+`;
+
+/**
+ * __useBirdListQuery__
+ *
+ * To run a query within a React component, call `useBirdListQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBirdListQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBirdListQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useBirdListQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    GqlBirdListQuery,
+    GqlBirdListQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GqlBirdListQuery, GqlBirdListQueryVariables>(
+    BirdListQueryDocument,
+    options,
+  );
+}
+export function useBirdListQueryLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GqlBirdListQuery,
+    GqlBirdListQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GqlBirdListQuery, GqlBirdListQueryVariables>(
+    BirdListQueryDocument,
+    options,
+  );
+}
+export type BirdListQueryHookResult = ReturnType<typeof useBirdListQuery>;
+export type BirdListQueryLazyQueryHookResult = ReturnType<
+  typeof useBirdListQueryLazyQuery
+>;
+export type BirdListQueryQueryResult = Apollo.QueryResult<
+  GqlBirdListQuery,
+  GqlBirdListQueryVariables
+>;
 export const RecordListQueryDocument = gql`
   query RecordListQuery {
     bird(id: 1) {

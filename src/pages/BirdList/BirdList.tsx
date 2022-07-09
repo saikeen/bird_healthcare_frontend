@@ -1,8 +1,8 @@
 import { Box, Heading } from '@chakra-ui/react';
 import { gql } from '@apollo/client';
-import Panel from '../../ui/Panel';
-import { useRecordListQuery } from '../../../generated/graphql';
-import BirdListTable from '../../model/Bird/BirdList/BirdListTable';
+import Panel from '../../components/ui/Panel';
+import { useRecordListQuery } from '../../generated/graphql';
+import BirdListTable from '../../components/model/Bird/BirdList/BirdListTable';
 
 gql`
   query BirdListQuery {
@@ -13,7 +13,7 @@ gql`
 `;
 
 export const BirdList = () => {
-   const { loading, error } = useRecordListQuery();
+  const { loading, error } = useRecordListQuery();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;

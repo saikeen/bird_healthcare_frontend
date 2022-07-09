@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react';
-import Panel from '../../ui/Panel';
+import Panel from '../../components/ui/Panel';
 
 export const Top = () => (
   <Box p={4}>

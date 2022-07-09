@@ -5,11 +5,11 @@ import { startOfMonth } from 'date-fns';
 import Select, { SingleValue } from 'react-select';
 import { useState } from 'react';
 import { gql } from '@apollo/client';
-import Panel from '../../ui/Panel';
+import Panel from '../../components/ui/Panel';
 import 'react-datepicker/dist/react-datepicker.css';
-import Form from '../../ui/Form';
-import RecordListTable from '../../model/Record/RecordList/RecordListTable';
-import { useRecordListQuery } from '../../../generated/graphql';
+import Form from '../../components/ui/Form';
+import RecordListTable from '../../components/model/Record/RecordList/RecordListTable';
+import { useRecordListQuery } from '../../generated/graphql';
 
 registerLocale('ja', ja);
 
